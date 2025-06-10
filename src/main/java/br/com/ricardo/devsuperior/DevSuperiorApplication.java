@@ -1,6 +1,8 @@
 package br.com.ricardo.devsuperior;
 
 import br.com.ricardo.devsuperior.entity.Order;
+import br.com.ricardo.devsuperior.service.OrderService;
+import br.com.ricardo.devsuperior.service.ShippingService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -24,11 +26,14 @@ public class DevSuperiorApplication {
 
 		Order order = new Order(code, basic, discount);
 
+		OrderService orderService = new OrderService(new ShippingService());
 
 
+		Double valorTotal = orderService.total(order);
 
-		System.out.println("Pedido Codigo" + code);
-		System.out.println("Valor Total" + basic);
+
+		System.out.println("Pedido Codigo " + code);
+		System.out.println("Valor Total " + valorTotal);
 
 	}
 
