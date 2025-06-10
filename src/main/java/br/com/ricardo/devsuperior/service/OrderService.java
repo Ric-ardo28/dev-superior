@@ -17,9 +17,8 @@ public class OrderService {
 
 	public Double total(Order order) {
 		double valorDesconto = order.getBasic() * (order.getDiscount()/100);
-		double valorTotal = order.getBasic() - valorDesconto + shippingService.Shipping(order);
 
 
-		return valorTotal;
+		return order.getBasic() - valorDesconto + shippingService.Shipping(order);
 	}
 }
