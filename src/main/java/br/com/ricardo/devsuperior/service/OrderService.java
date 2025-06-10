@@ -11,9 +11,6 @@ public class OrderService {
 	@Autowired
 	private ShippingService shippingService;
 
-	public OrderService(ShippingService shippingService) {
-		this.shippingService = shippingService;
-	}
 
 	public Double total(Order order) {
 		double valorDesconto = order.getBasic() * (order.getDiscount()/100);
