@@ -2,7 +2,7 @@ package br.com.ricardo.devsuperior;
 
 import br.com.ricardo.devsuperior.entity.Order;
 import br.com.ricardo.devsuperior.service.OrderService;
-import br.com.ricardo.devsuperior.service.ShippingService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,7 +23,7 @@ public class DevSuperiorApplication implements CommandLineRunner {
 	}
 
 		@Override
-		public void run (String...args) throws Exception {
+		public void run (String...args)  {
 
 
 			Locale.setDefault(Locale.US);
@@ -42,7 +42,7 @@ public class DevSuperiorApplication implements CommandLineRunner {
 
 
 			System.out.println("Pedido Codigo " + code);
-			System.out.println("Valor Total " + valorTotal);
+			System.out.printf("Valor Total: R$ %.2f%n ", valorTotal);
 
 			sc.close();
 
